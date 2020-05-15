@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="p5.js"></script>
+  <script src="p5.sound.min.js"></script>
+
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.4.6/dist/css/uikit.min.css" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Linjeelementer</title>
+
+</head>
+
+<body>
+
+  <!-- navbar -->
+  <nav class="uk-navbar-container" uk-navbar>
+
+    <div class="uk-navbar-left">
+
+      <ul class="uk-navbar-nav">
+        <li class="uk-active"><a href="/">Linjeelementer</a></li>
+      </ul>
+
+    </div>
+
+    <div class="uk-navbar-right">
+      <ul class="uk-navbar-nav">
+        <li class=""><a href="https://github.com/NikolajK-HTX">Lavet af Nikolaj</a></li>
+      </ul>
+    </div>
+
+  </nav>
+  <!-- navbar -->
+  <div class="uk-container">
+    <div uk-grid class="uk-margin-top uk-grid-small uk-grid-match">
+      <div class="uk-width-3-4">
+        <div class="uk-card uk-card-primary uk-card-body">
+          <div id="canvas-holder"></div>
+        </div>
+
+      </div>
+      <div class="uk-width-1-4">
+        <div class="uk-card uk-card-secondary uk-card-body">
+          <h3 class="uk-card-title">Indstillinger</h3>
+
+          <div class="uk-grid-small uk-grid-match" uk-grid>
+            <div class="uk-width-1-5">
+              <p style="text-align: center; margin-top: auto; margin-bottom: auto;">y'=</p>
+            </div>
+            <div class="uk-width-4-5 uk-padding-remove uk-margin-remove">
+              <input class="uk-input uk-margin" type="text" id="derivateInput" placeholder="x/y">
+
+            </div>
+
+          </div>
+
+          <p class="uk-margin uk-margin-remove-bottom">x-akse grænse: <span id="coorVal"></span></p>
+          <input type="range" min="5" max="100" value="20" class="slider" id="coordinateSizeSlider">
+
+          <p class="uk-margin-top uk-margin-remove-bottom">tæthed: <span id="densVal"></span></p>
+          <input type="range" min="20" max="110" value="100" class="slider" id="densitySlider">
+
+          <button class="uk-button uk-button-default" onclick="createNewLineElements()">Indlæs</button>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <script src="sketch.js"></script>
+
+  <!-- UIkit JS -->
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.4.6/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.4.6/dist/js/uikit-icons.min.js"></script>
+
+
+</body>
+
+</html>
