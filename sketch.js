@@ -39,8 +39,11 @@ function drawArrows() {
       let inputFromUser = document.querySelector('#derivateInput').value;
       if (inputFromUser == "") inputFromUser = "x/y";
       let derivative = eval(inputFromUser);
-      let newArrow = new Arrow(x, y, derivative);
-      newArrow.display();
+
+      if (!isNaN(derivative)) {
+        let newArrow = new Arrow(x, y, derivative);
+        newArrow.display();
+      }
     }
   }
   pop();
@@ -90,7 +93,7 @@ function drawFunction() {
   stroke(random() * 255, random() * 255, random() * 255, 100);
   strokeWeight(10);
   point(mouseX, mouseY);
-  
+
   strokeWeight(2);
   stroke(255);
   textAlign(CENTER);
@@ -99,14 +102,14 @@ function drawFunction() {
   // dette er dumt lavet - hvis man ændrer differentialligningen og 
   // laver et punkt er det for den nye differentialligning, mens den
   // gamle stadig vises indtil man trykker INDLÆS igen
-  let x = Math.round(((mouseX-width/2) * (coordinateSystemSize*2 / width))*100)/100;
-  let y = Math.round(((height-mouseY)-height/2) * (yCoordinateSize*2 / height)*100)/100;
+  let x = Math.round(((mouseX - width / 2) * (coordinateSystemSize * 2 / width)) * 100) / 100;
+  let y = Math.round(((height - mouseY) - height / 2) * (yCoordinateSize * 2 / height) * 100) / 100;
   let inputFromUser = document.querySelector('#derivateInput').value;
   if (inputFromUser == "") inputFromUser = "x/y";
   let haldning = eval(inputFromUser);
-  haldning = Math.round(haldning*100)/100;
-  text(`x: ${x}`, mouseX, mouseY-30);
-  text(`y: ${y}`, mouseX, mouseY-20);
+  haldning = Math.round(haldning * 100) / 100;
+  text(`x: ${x}`, mouseX, mouseY - 30);
+  text(`y: ${y}`, mouseX, mouseY - 20);
   text(`Hældning: ${haldning}`, mouseX, mouseY - 10);
   pop();
 
